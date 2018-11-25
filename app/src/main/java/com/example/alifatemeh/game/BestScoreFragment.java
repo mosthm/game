@@ -1,4 +1,6 @@
 package com.example.alifatemeh.game;
 
-public class BestScoreFragment {
+import android.support.v4.app.Fragment;
+
+public class BestScoreFragment extends Fragment {
 }

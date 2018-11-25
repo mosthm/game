@@ -1,4 +1,6 @@
 package com.example.alifatemeh.game;
 
-public class GameFragment {
+import android.support.v4.app.Fragment;
+
+public class GameFragment extends Fragment {
 }
