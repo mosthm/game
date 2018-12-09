@@ -3,6 +3,8 @@ package com.example.alifatemeh.game;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.google.gson.Gson;
+
 public class MyPrefrenceManger {
     private static MyPrefrenceManger instance =null;
     private SharedPreferences sharedPreferences=null;
@@ -31,33 +33,33 @@ public class MyPrefrenceManger {
     }
     //******************************************************************
 
-//    public void putBestUser(User bestUser){
-////        Gson gson =new Gson();
-////        String userJson = gson.toJson(bestUser,User.class);
-////        editor.putString("best_user",userJson);
-////        editor.apply();
-//    }
-//    public User getBestUser(){
-////        String userJson=sharedPreferences.getString("best_user",null);
-////        if(userJson==null){
-////            return null;
-////        }
-////        Gson gson=new Gson();
-////        return gson.fromJson(userJson,User.class);
-//    }
+    public void putBestUser(User bestUser){
+        Gson gson =new Gson();
+        String userJson = gson.toJson(bestUser,User.class);
+        editor.putString("best_user",userJson);
+        editor.apply();
+    }
+    public User getBestUser(){
+        String userJson=sharedPreferences.getString("best_user",null);
+        if(userJson==null){
+            return null;
+        }
+        Gson gson=new Gson();
+        return gson.fromJson(userJson,User.class);
+    }
 //    //******************************************************************
-//    public void putRannkList (RankList rankList){
-////        Gson gson=new Gson();
-////        String rankListJson=gson.toJson(rankList,RankList.class);
-////        editor.putString("ranklist",rankListJson);
-////        editor.apply();
-//    }
-//    public RankList getRankList(){
-////        String rankListJson = sharedPreferences.getString("ranklist",null);
-////        if(rankListJson==null){
-////            return new RankList();
-////        }
-////        Gson gson=new Gson();
-////        return gson.fromJson(rankListJson,RankList.class);
-//    }
+    public void putRannkList (RankList rankList){
+        Gson gson=new Gson();
+        String rankListJson=gson.toJson(rankList,RankList.class);
+        editor.putString("ranklist",rankListJson);
+        editor.apply();
+    }
+    public RankList getRankList(){
+        String rankListJson = sharedPreferences.getString("ranklist",null);
+        if(rankListJson==null){
+            return new RankList();
+        }
+        Gson gson=new Gson();
+        return gson.fromJson(rankListJson,RankList.class);
+    }
 }
