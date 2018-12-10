@@ -9,4 +9,7 @@
     <string name="confirm">Confirm</string>
     <string name="show_best_score">Show Best Score</string>
     <string name="enter_your_name">Enter Your Name</string>
+    <string name="both">Both</string>
+    <string name="one">One</string>
+    <string name="nothing">Nothing</string>
 </resources>

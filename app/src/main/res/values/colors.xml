@@ -6,4 +6,5 @@
     <color name="White">#ffffff</color>
     <color name="colorButtonNormal">#2196f3</color>
     <color name="global_backgound">#eeeeee</color>
+    <color name="red">#bb1111</color>
 </resources>

@@ -41,12 +41,12 @@ public class SpeedMatchFragment extends Fragment {
                         , new OnNameSellectedListener() {
                     @Override
                     public void onNameSlected(String playerName) {
-                        SpeedMatchFragment speedMatchFragment = new SpeedMatchFragment();
+                        GameSpeedFragment gameSpeedFragment = new GameSpeedFragment();
                         Bundle bundle =new Bundle();
                         bundle.putString("player_name",playerName);
-                        speedMatchFragment.setArguments(bundle);
+                        gameSpeedFragment.setArguments(bundle);
                         getFragmentManager().beginTransaction()
-                                .add(R.id.frag_container,speedMatchFragment)
+                                .add(R.id.frag_container,gameSpeedFragment)
                                 .addToBackStack(null)
                                 .commit();
                     }
@@ -58,11 +58,11 @@ public class SpeedMatchFragment extends Fragment {
         showBestScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BestScoreFragment bestScoreFragment = new BestScoreFragment();
-                getFragmentManager().beginTransaction()
-                        .add(R.id.frag_container,bestScoreFragment)
-                        .addToBackStack(null)
-                        .commit();
+//                BestScoreFragment bestScoreFragment = new BestScoreFragment();
+//                getFragmentManager().beginTransaction()
+//                        .add(R.id.frag_container,bestScoreFragment)
+//                        .addToBackStack(null)
+//                        .commit();
             }
         });
     }

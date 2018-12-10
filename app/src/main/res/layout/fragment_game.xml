@@ -16,14 +16,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/tex_point"
             android:layout_width="match_parent"
-            android:text="Your points 15 out of 17"
+            android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:padding="10dp"
-            android:textSize="20sp"
-            android:layout_height="wrap_content" />
+            android:text="Your points 15 out of 17"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tex_Time"
