@@ -37,6 +37,7 @@ public class GameSpeedFragment extends Fragment {
     private LinearLayout gameContainer;
     //**********************************************************************************************
     private int countDownInt=3;
+    private int intShape[]={R.drawable.black_dayereh_24dp,R.drawable.black_moraba_24dp,R.drawable.black_mosalas_24dp,R.drawable.blue_dayereh_24dp,R.drawable.blue_moraba_24dp,R.drawable.blue_mosalas_24dp,R.drawable.green_dayereh_24dp,R.drawable.green_moraba_24dp,R.drawable.green_mosalas_24dp};
     private int gLevel=0;
     private int pointNum=0;
     private int shapeNum;
@@ -62,20 +63,22 @@ public class GameSpeedFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         findviews(view);
-//        configureViews();
+        intgenerateInt();
+        configureViews();
 //        startCountDown();
 
-        shapeNum=intgenerateInt();
+       // shapeNum=intgenerateInt();
         //point.setText(String.valueOf(shapeNum));
-        firstImage.setImageResource(R.drawable.black_dayereh_24dp);
 
     }
 
-    private int intgenerateInt(){
+    private void intgenerateInt(){
 
-        Random random =new Random();
-        int number = random.nextInt((Max_Int_Shape-Min_Int_Shape)+1)+Min_Int_Shape;
-        return number;
+        for(int i=1;i<100;i++){
+            Random random =new Random();
+            int number = random.nextInt((Max_Int_Shape-Min_Int_Shape)+1)+Min_Int_Shape;
+            firstImage.setImageResource(intShape[number]);
+        }
     }
 
     private void configureViews(){
@@ -84,19 +87,22 @@ public class GameSpeedFragment extends Fragment {
         both.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                evaluateAndContinuGame(Left_Button);
+               // evaluateAndContinuGame(Left_Button);
+                intgenerateInt();
             }
         });
         nothing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                evaluateAndContinuGame(Right_Button);
+             //   evaluateAndContinuGame(Right_Button);
+                intgenerateInt();
             }
         });
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                evaluateAndContinuGame(Equal_Button);
+             //   evaluateAndContinuGame(Equal_Button);
+                intgenerateInt();
             }
         });
     }
