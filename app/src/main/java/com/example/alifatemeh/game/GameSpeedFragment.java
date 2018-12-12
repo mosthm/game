@@ -27,16 +27,16 @@ public class GameSpeedFragment extends Fragment {
     private Button both;
     private Button nothing;
     private Button one;
-    private TextView point;
+    private TextView pointwhich;
     private TextView level;
-    private TextView retime;
+    private TextView retimes;
     private ImageView firstImage;
-    private ImageView flag_point;
-    private TextView countDown;
+    private ImageView flag_points;
+    private TextView countDowns;
    // private ImageView firstImageArr[]=R.drawable.black_dayereh_24dp,;
     private ImageView secoundImage;
-    private LinearLayout gameContainer;
-    private LinearLayout buttonforgame;
+    private LinearLayout gameContainers;
+    private LinearLayout buttonforgames;
     //**********************************************************************************************
     private int countDownInt=3;
     private int intShape[]={R.drawable.black_dayereh_24dp,R.drawable.black_moraba_24dp,R.drawable.black_mosalas_24dp,R.drawable.blue_dayereh_24dp,R.drawable.blue_moraba_24dp,R.drawable.blue_mosalas_24dp,R.drawable.green_dayereh_24dp,R.drawable.green_moraba_24dp,R.drawable.green_mosalas_24dp};
@@ -58,7 +58,7 @@ public class GameSpeedFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //readArguments();
+        readArguments();
         return inflater.inflate(R.layout.fragment_gamesped,container,false);
     }
     @Override
@@ -130,16 +130,16 @@ public class GameSpeedFragment extends Fragment {
     private  void  findviews(View view){
         // point.setText(getString(R.string.user_points,0));
         firstImage = (ImageView) view.findViewById(R.id.first_image);
-        flag_point = (ImageView) view.findViewById(R.id.flag_point);
+        flag_points = (ImageView) view.findViewById(R.id.flag_point);
         secoundImage = (ImageView) view.findViewById(R.id.secound_image);
         both = (Button) view.findViewById(R.id.both);
         nothing =(Button) view.findViewById(R.id.nothing);
         one =(Button) view.findViewById(R.id.one);
-        countDown =(TextView) view.findViewById(R.id.count_down);
-        retime =(TextView) view.findViewById(R.id.tex_Time);
-        point =(TextView) view.findViewById(R.id.tex_point);
-        gameContainer =(LinearLayout) view.findViewById(R.id.game_container);
-        buttonforgame =(LinearLayout) view.findViewById(R.id.buttonforgame);
+        countDowns =(TextView) view.findViewById(R.id.count_down);
+        retimes =(TextView) view.findViewById(R.id.tex_Time);
+        pointwhich =(TextView) view.findViewById(R.id.tex_point);
+        gameContainers =(LinearLayout) view.findViewById(R.id.game_container);
+        buttonforgames=(LinearLayout) view.findViewById(R.id.buttonforgame);
     }
     private  void evaluateAndContinuGame(int whichPress){
         if(gameIntProgress==false){
@@ -159,11 +159,11 @@ public class GameSpeedFragment extends Fragment {
         if(flag==boths){
             if(shapeNum_first==shapeNum_secound){
                 pointNum++;
-                flag_point.setImageResource(R.drawable.ic_check_black_24dp);
+                flag_points.setImageResource(R.drawable.ic_check_black_24dp);
                 falgPoint();
                 shapeNum_first=shapeNum_secound;
             }else {
-                flag_point.setImageResource(R.drawable.ic_close_black_24dp);
+                flag_points.setImageResource(R.drawable.ic_close_black_24dp);
                 falgPoint();
                 shapeNum_first=shapeNum_secound;
             }
@@ -172,7 +172,7 @@ public class GameSpeedFragment extends Fragment {
                 if(shapeNum_secound==4||shapeNum_secound==7)
                 {
                     pointNum++;
-                    flag_point.setImageResource(R.drawable.ic_check_black_24dp);
+                    flag_points.setImageResource(R.drawable.ic_check_black_24dp);
                     falgPoint();
                     shapeNum_first=shapeNum_secound;
                 }
@@ -180,7 +180,7 @@ public class GameSpeedFragment extends Fragment {
                 if(shapeNum_secound==5||shapeNum_secound==8)
                 {
                     pointNum++;
-                    flag_point.setImageResource(R.drawable.ic_check_black_24dp);
+                    flag_points.setImageResource(R.drawable.ic_check_black_24dp);
                     falgPoint();
                     shapeNum_first=shapeNum_secound;
                 }
@@ -188,31 +188,31 @@ public class GameSpeedFragment extends Fragment {
                 if(shapeNum_secound==6||shapeNum_secound==9)
                 {
                     pointNum++;
-                    flag_point.setImageResource(R.drawable.ic_check_black_24dp);
+                    flag_points.setImageResource(R.drawable.ic_check_black_24dp);
                     falgPoint();
                     shapeNum_first=shapeNum_secound;
                 }
             }else if(shapeNum_secound<=3&&shapeNum_first<=3){
                 pointNum++;
-                flag_point.setImageResource(R.drawable.ic_check_black_24dp);
+                flag_points.setImageResource(R.drawable.ic_check_black_24dp);
                 falgPoint();
                 shapeNum_first=shapeNum_secound;
             }else {
-                flag_point.setImageResource(R.drawable.ic_close_black_24dp);
+                flag_points.setImageResource(R.drawable.ic_close_black_24dp);
                 falgPoint();
                 shapeNum_first=shapeNum_secound;
             }
         }else if(flag==nothings){
             if(!(shapeNum_first==shapeNum_secound)){
                 pointNum++;
-                flag_point.setImageResource(R.drawable.ic_check_black_24dp);
+                flag_points.setImageResource(R.drawable.ic_check_black_24dp);
                 falgPoint();
                 shapeNum_first=shapeNum_secound;
             }else if(shapeNum_first==1){
                 if(!(shapeNum_secound==4)||!(shapeNum_secound==7))
                 {
                     pointNum++;
-                    flag_point.setImageResource(R.drawable.ic_check_black_24dp);
+                    flag_points.setImageResource(R.drawable.ic_check_black_24dp);
                     falgPoint();
                     shapeNum_first=shapeNum_secound;
                 }
@@ -220,7 +220,7 @@ public class GameSpeedFragment extends Fragment {
                 if(!(shapeNum_secound==5)||!(shapeNum_secound==8))
                 {
                     pointNum++;
-                    flag_point.setImageResource(R.drawable.ic_check_black_24dp);
+                    flag_points.setImageResource(R.drawable.ic_check_black_24dp);
                     falgPoint();
                     shapeNum_first=shapeNum_secound;
                 }
@@ -228,18 +228,18 @@ public class GameSpeedFragment extends Fragment {
                 if(!(shapeNum_secound==6)||!(shapeNum_secound==9))
                 {
                     pointNum++;
-                    flag_point.setImageResource(R.drawable.ic_check_black_24dp);
+                    flag_points.setImageResource(R.drawable.ic_check_black_24dp);
                     falgPoint();
                     shapeNum_first=shapeNum_secound;
                 }
             }else if(!(shapeNum_secound<=3)&&!(shapeNum_first<=3)){
                 pointNum++;
-                flag_point.setImageResource(R.drawable.ic_check_black_24dp);
+                flag_points.setImageResource(R.drawable.ic_check_black_24dp);
                 falgPoint();
                 shapeNum_first=shapeNum_secound;
             }else {
 
-                flag_point.setImageResource(R.drawable.ic_close_black_24dp);
+                flag_points.setImageResource(R.drawable.ic_close_black_24dp);
                 falgPoint();
                 shapeNum_first=shapeNum_secound;
             }
@@ -250,19 +250,19 @@ public class GameSpeedFragment extends Fragment {
     }
     private void startCountDown(){
         ObjectAnimator scaleXAnimation =ObjectAnimator.ofFloat(
-                countDown,"scaleX",1f,2f,1.5f,3f
+                countDowns,"scaleX",1f,2f,1.5f,3f
         );
         scaleXAnimation.setDuration(1000);
         ObjectAnimator scaleYAnimation =ObjectAnimator.ofFloat(
-                countDown,"scaleY",1f,2f,1.5f,3f
+                countDowns,"scaleY",1f,2f,1.5f,3f
         );
         scaleYAnimation.setDuration(1000);
         ObjectAnimator rotateAnimation =ObjectAnimator.ofFloat(
-                countDown,"rotation",0f,180f,360f
+                countDowns,"rotation",0f,180f,360f
         );
         rotateAnimation.setDuration(1000);
         ObjectAnimator alphaAnimation =ObjectAnimator.ofFloat(
-                countDown,"alpha",1f,0f
+                countDowns,"alpha",1f,0f
         );
         alphaAnimation.setDuration(1000);
         AnimatorSet animatorSet=new AnimatorSet();
@@ -272,8 +272,8 @@ public class GameSpeedFragment extends Fragment {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
                 if (countDownInt==0){
-                    gameContainer.setVisibility(View.VISIBLE);
-                    buttonforgame.setVisibility(View.VISIBLE);
+                    gameContainers.setVisibility(View.VISIBLE);
+                    buttonforgames.setVisibility(View.VISIBLE);
                     startGame();
 
                 }else {
@@ -283,7 +283,7 @@ public class GameSpeedFragment extends Fragment {
             @Override
             public void onAnimationStart(Animator animation) {
                 super.onAnimationStart(animation);
-                countDown.setText(String.valueOf(countDownInt));
+                countDowns.setText(String.valueOf(countDownInt));
                 countDownInt --;
             }
         });
@@ -292,19 +292,19 @@ public class GameSpeedFragment extends Fragment {
     }
     private void falgPoint(){
         ObjectAnimator scaleXAnimation =ObjectAnimator.ofFloat(
-                flag_point,"scaleX",1f,2f,1.5f,3f
+                flag_points,"scaleX",1f,2f,1.5f,3f
         );
         scaleXAnimation.setDuration(1000);
         ObjectAnimator scaleYAnimation =ObjectAnimator.ofFloat(
-                flag_point,"scaleY",1f,2f,1.5f,3f
+                flag_points,"scaleY",1f,2f,1.5f,3f
         );
         scaleYAnimation.setDuration(1000);
         ObjectAnimator rotateAnimation =ObjectAnimator.ofFloat(
-                flag_point,"rotation",0f,180f,360f
+                flag_points,"rotation",0f,180f,360f
         );
         rotateAnimation.setDuration(1000);
         ObjectAnimator alphaAnimation =ObjectAnimator.ofFloat(
-                flag_point,"alpha",1f,0f
+                flag_points,"alpha",1f,0f
         );
         alphaAnimation.setDuration(100);
         AnimatorSet animatorSet=new AnimatorSet();
@@ -313,14 +313,14 @@ public class GameSpeedFragment extends Fragment {
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
-                flag_point.setVisibility(View.INVISIBLE);
+                flag_points.setVisibility(View.INVISIBLE);
 
             }
 
             @Override
             public void onAnimationStart(Animator animation) {
                 super.onAnimationStart(animation);
-                flag_point.setVisibility(View.VISIBLE);
+                flag_points.setVisibility(View.VISIBLE);
             }
         });
         animatorSet.start();
@@ -331,17 +331,17 @@ public class GameSpeedFragment extends Fragment {
         countdowntim = new CountDownTimer(8000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                retime.setText(getString(R.string.game_time,(int)(millisUntilFinished/1000)));
+                retimes.setText(getString(R.string.game_time,(int)(millisUntilFinished/1000)));
             }
 
             @Override
             public void onFinish() {
-                retime.setText("Game Finish");
+                retimes.setText("Game Finish");
                 updateHighScore();
-                buttonforgame.setVisibility(View.INVISIBLE);
-                gameContainer.setVisibility(View.INVISIBLE);
-                point.setVisibility(View.VISIBLE);
-                point.setText(getString(R.string.user_points,pointNum));
+                buttonforgames.setVisibility(View.INVISIBLE);
+                gameContainers.setVisibility(View.INVISIBLE);
+                pointwhich.setVisibility(View.VISIBLE);
+                pointwhich.setText(getString(R.string.user_points,pointNum));
 //                equal.setVisibility(View.INVISIBLE);
             }
         };
@@ -352,13 +352,13 @@ public class GameSpeedFragment extends Fragment {
     }
     private void updateHighScore(){
 //      get rank list
-        RankList ranklist =MyPrefrenceManger.getInstance(getActivity()).getRankList();
-        User newUser =new User();
+        RankListSpeed rankListSpeed =MyPrefrenceManger.getInstance(getActivity()).getRankListSpeed();
+        UserSpeed newUser =new UserSpeed();
         newUser.setName(playerName);
         newUser.setScore(pointNum);
-        ranklist.addUserList(newUser);
+        rankListSpeed.addUserListSpeed(newUser);
         //save rank list in sha=eredprefernce
-        MyPrefrenceManger.getInstance(getActivity()).putRannkListSpeed(ranklist);
+        MyPrefrenceManger.getInstance(getActivity()).putRankListSpeed(rankListSpeed);
 
     }
 }

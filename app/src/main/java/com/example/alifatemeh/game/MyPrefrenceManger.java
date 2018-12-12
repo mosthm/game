@@ -63,18 +63,18 @@ public class MyPrefrenceManger {
         return gson.fromJson(rankListJson,RankList.class);
     }
     //    //******************************************************************
-    public void putRannkListSpeed (RankList rankList){
+    public void putRankListSpeed (RankListSpeed rankListSpeed){
         Gson gson=new Gson();
-        String rankListJson=gson.toJson(rankList,RankList.class);
+        String rankListJson=gson.toJson(rankListSpeed,RankListSpeed.class);
         editor.putString("ranklist",rankListJson);
         editor.apply();
     }
-    public RankList getRankListSpeed(){
+    public RankListSpeed getRankListSpeed(){
         String rankListJson = sharedPreferences.getString("ranklist",null);
         if(rankListJson==null){
-            return new RankList();
+            return new RankListSpeed();
         }
         Gson gson=new Gson();
-        return gson.fromJson(rankListJson,RankList.class);
+        return gson.fromJson(rankListJson,RankListSpeed.class);
     }
 }

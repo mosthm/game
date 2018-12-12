@@ -58,11 +58,11 @@ public class SpeedMatchFragment extends Fragment {
         showBestScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                BestScoreFragment bestScoreFragment = new BestScoreFragment();
-//                getFragmentManager().beginTransaction()
-//                        .add(R.id.frag_container,bestScoreFragment)
-//                        .addToBackStack(null)
-//                        .commit();
+                BestScoreSpeedFragment bestScoreSpeedFragment = new BestScoreSpeedFragment();
+                getFragmentManager().beginTransaction()
+                        .add(R.id.frag_container,bestScoreSpeedFragment)
+                        .addToBackStack(null)
+                        .commit();
             }
         });
     }

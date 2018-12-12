@@ -13,7 +13,7 @@ public class GetNameDialog extends Dialog {
     private EditText playerNmae;
     private OnNameSellectedListener listener;
 
-    public GetNameDialog(Context context, OnNameSellectedListener listener) {
+    public GetNameDialog(Context context,OnNameSellectedListener listener) {
         super(context);
         this.listener=listener;
     }

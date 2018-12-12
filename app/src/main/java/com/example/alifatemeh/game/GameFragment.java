@@ -196,7 +196,6 @@ public class GameFragment extends Fragment {
         }else if (flag==Equal_Button){
             if(leftNum==rightNum){
                 pointNum++;
-
             }
         }
 //        }
@@ -243,4 +242,5 @@ public class GameFragment extends Fragment {
         rightNumber.setText(String.valueOf(rightNum));
 
     }
+
 }
